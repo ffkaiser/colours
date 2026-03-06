@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <title>Random Hex Colour Generator</title>
 
-<!-- Font Awesome CDN for button icon -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* Reset default browser spacing */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-/* Section fills the whole screen */
+
 section {
     height: 100vh;
 
@@ -51,7 +51,7 @@ button {
     transition: 0.2s;
 }
 
-/* Button hover effect */
+
 button:hover {
     background: #217dbb;
 }
@@ -63,10 +63,10 @@ button:hover {
 
 <section>
 
-<!-- Box that displays the hex code -->
+
 <div id="hexBox">#2c3e50</div>
 
-<!-- Button with Font Awesome icon -->
+
 <button id="colorBtn">
     <i class="fa-solid fa-palette"></i> Generate Colour
 </button>
@@ -75,38 +75,31 @@ button:hover {
 
 <script>
 
-// Array containing the 16 valid hexadecimal characters
 const hexChars = [
 '0','1','2','3','4','5','6','7','8','9',
 'A','B','C','D','E','F'
 ];
 
-// Select HTML elements
 const button = document.getElementById("colorBtn");
 const section = document.querySelector("section");
 const hexBox = document.getElementById("hexBox");
 
 
-// Add click event listener to button
+
 button.addEventListener("click", () => {
 
-    // Variable to store the hex colour string
+    
     let hexColour = "#";
 
-    // Loop 6 times to generate a 6 digit hex code
     for(let i = 0; i < 6; i++) {
 
-        // Generate random index between 0 and 15
         let randomIndex = Math.floor(Math.random() * hexChars.length);
 
-        // Add character from array to hex string
         hexColour += hexChars[randomIndex];
     }
 
-    // Change background colour of section
     section.style.backgroundColor = hexColour;
 
-    // Display the generated hex code on screen
     hexBox.textContent = hexColour;
 
 });

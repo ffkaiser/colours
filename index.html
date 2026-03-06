@@ -87,6 +87,28 @@ const section = document.querySelector("section");
 const hexBox = document.getElementById("hexBox");
 
 
+// Add click event listener to button
+button.addEventListener("click", () => {
+
+    // Variable to store the hex colour string
+    let hexColour = "#";
+
+    // Loop 6 times to generate a 6 digit hex code
+    for(let i = 0; i < 6; i++) {
+
+        // Generate random index between 0 and 15
+        let randomIndex = Math.floor(Math.random() * hexChars.length);
+
+        // Add character from array to hex string
+        hexColour += hexChars[randomIndex];
+    }
+
+    // Change background colour of section
+    section.style.backgroundColor = hexColour;
+
+    // Display the generated hex code on screen
+    hexBox.textContent = hexColour;
+
 });
 
 </script>
